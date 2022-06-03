@@ -53,7 +53,7 @@ cross join dbo.AchievementType at
 
 SELECT FirstName ,LastName
 FROM dbo.Teacher as t
-LEFT JOIN Grade as g
+LEFT JOIN dbo.Grade as g
 ON t.Id = g.TeacherID
 WHERE g.TeacherID is NULL
 
