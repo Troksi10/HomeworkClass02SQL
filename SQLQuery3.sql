@@ -4,13 +4,13 @@ SELECT *
 FROM dbo.Student
 WHERE FirstName = 'Antonio'
 
---Find all Students with DateOfBirth greater than ‘01.01.1999’
+--Find all Students with DateOfBirth greater than â€˜01.01.1999â€™
 
 SELECT * 
 FROM dbo.Student
 WHERE DateOfBirth > '01.01.1999'
 
---Find all Students with LastName starting With ‘J’ enrolled in January/1998
+--Find all Students with LastName starting With â€˜Jâ€™ enrolled in January/1998
 
 SELECT * 
 FROM dbo.Student
@@ -52,9 +52,10 @@ cross join dbo.AchievementType at
 --List all Teachers , without exam Grade
 
 SELECT FirstName ,LastName
-FROM Teacher
-FULL JOIN Grade ON Grade.TeacherId = TeacherId
-WHERE TeacherId IS NULL
+FROM dbo.Teacher as t
+LEFT JOIN Grade as g
+ON t.Id = g.TeacherID
+WHERE g.TeacherID is NULL
 
 
 
